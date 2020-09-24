@@ -7,6 +7,12 @@
 * Path:   libs/
 * File:   analyzer.h
 */
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
 class Analyzer{
 private:
     string file;
@@ -14,6 +20,11 @@ private:
     string OAddress;
     string protocol;
 
+    bool readFile(string);
+
+    void setDestAddress(string);
+    void setOriAddress(string);
+    
 public:
     string getFile();
     string getDestAddress();
@@ -21,6 +32,8 @@ public:
     string getProtocol();
 
     void setFile(string);
+
+    void printData();
 };
 
 

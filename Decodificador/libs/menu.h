@@ -9,13 +9,14 @@
 */
 
 #include <iostream>
+#include "analyzer.h"
 
 class Menu{
 private:
     void header();
 public:
     void printMenu();
-    void mainMenu();
+    void mainMenu(Analyzer&);
     void enterToContinue();
 };
 

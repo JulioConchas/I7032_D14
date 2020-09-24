@@ -18,13 +18,13 @@ void Menu::header(){
     cout << "|                    v1.0                |" << endl;
     cout << "|========================================|" << endl;
     cout << "|                                        |" << endl;
-    cout << "|       [1] Leer archivo                 |" << endl;
+
 }
 void Menu::printMenu(){
     cout << "|       [1] Leer archivo                 |" << endl;
     cout << "|       [7] Salit                        |" << endl;
 }
-void Menu::mainMenu(){
+void Menu::mainMenu(Analyzer &a){
     int opt;
     string file;
     do{
@@ -33,11 +33,20 @@ void Menu::mainMenu(){
         cin >> opt;
         switch (opt) {
             case 1:
-                cout << "Ingresa el nombre del archivo" << endl;
-                cout << "Decodificador/files/";
+                system("clear");
+                header();
+                cout << "| Ingresa el nombre del archivo          |" << endl;
+                cout << "| Decodificador/files/";
                 cin >> file;
+                a.setFile(file);
+                system("clear");
+                header();
+                a.printData();
+                enterToContinue();
+                break;
             case 7:
                 cout << "Exit!" << endl;
+                break;
             default:
                 cout << "Unknown option!" << endl;
         }
@@ -45,7 +54,10 @@ void Menu::mainMenu(){
     cout << "Bye, Bye!" << endl;
 }
 void Menu::enterToContinue(){
-    printf("Presione [ENTER] para continuar ....");
+    cout << "|                                        |" << endl;
+    cout << "| Presione [ENTER] para continuar ....   |" << endl;
+    cout << "|                                        |" << endl;
+    cout << "|========================================|" << endl;
     cin.get();
     getchar();
 }
