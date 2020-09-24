@@ -6,7 +6,7 @@
 
 OBJETOS=main.o \
 	     menu.o \
-
+		  analyzer.o \
 
 CFLAGS=-I../libs
 COMPILER=c++ -c -g
@@ -16,6 +16,9 @@ decodificador: $(OBJETOS)
 
 menu.o: ../libs/menu.cpp
 	$(COMPILER) ../libs/menu.cpp -o menu.o
+
+analyzer.o: ../libs/analyzer.cpp
+	$(COMPILER) ../libs/analyzer.cpp -o analyzer.o
 
 main.o: main.o ../libs/menu.h
 	$(COMPILER)  $(CFLAGS) main.cpp -o main.o

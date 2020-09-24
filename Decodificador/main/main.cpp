@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "analyzer.h"
 
 /*
 * Author: Julio Conchas
@@ -9,7 +10,8 @@
 
 int main(){
     Menu m;
-    m.mainMenu();
+    Analyzer scan;
+    m.mainMenu(scan);
 
     return 0;
 }
