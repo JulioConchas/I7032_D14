@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "protocol.h"
 
 using namespace std;
 
@@ -19,12 +20,14 @@ private:
     string DAddress;
     string OAddress;
     string protocol;
+    Protocol p_str;
 
     bool readFile(string);
 
     void setDestAddress(string);
     void setOriAddress(string);
-    
+    void setProtocol(string);
+
 public:
     string getFile();
     string getDestAddress();
